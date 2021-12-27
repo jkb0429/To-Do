@@ -1,3 +1,4 @@
+import 'package:first/Sign-Up.dart';
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 
@@ -60,7 +61,7 @@ class _LoginDemoState extends State<LoginDemo> {
             ),
             const Padding(
               padding: EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+                  left: 15.0, right: 15.0, top: 15, bottom: 20),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
 
@@ -69,15 +70,6 @@ class _LoginDemoState extends State<LoginDemo> {
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter secure password'),
-              ),
-            ),
-            TextButton(
-              onPressed: (){
-                print('Thats unlucky');
-              },
-              child: const Text(
-                'Forgot Password',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
               ),
             ),
             Container(
@@ -99,9 +91,16 @@ class _LoginDemoState extends State<LoginDemo> {
             const SizedBox(
               height: 130,
             ),
-            const Padding(
-              padding: EdgeInsets.all(30),
-              child: Text('New User? Create Account'),
+             Padding(
+              padding: const EdgeInsets.all(30),
+              child: TextButton(
+                child: const Text('New User? Create Account'),
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => SignUp())
+                  );
+                },
+                ),
             )
           ],
         ),
